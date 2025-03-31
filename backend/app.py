@@ -25,7 +25,11 @@ def create_app(testing):
     app.register_blueprint(cart_bp, url_prefix = "/cart")
     app.register_blueprint(order_bp, url_prefix ="/checkout")
 
-    from backend.models import cart, user, product, order
+    from backend.models.user import User
+    from backend.models.product import Product
+    from backend.models.cart import Cart
+    from backend.models.order import Order
+
 
     with app.app_context():
         db.create_all()
