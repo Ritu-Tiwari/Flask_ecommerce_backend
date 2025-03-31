@@ -14,7 +14,6 @@ class ProductService:
     @staticmethod
     def view_product_detail(id):
         product  = Product.query.get(id)
-        print(product)
         if not product:
             raise ResourceNotFoundException("Product was not found.Enter valid Id",404)
         return product.to_dict()
